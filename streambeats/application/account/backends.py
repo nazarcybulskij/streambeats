@@ -1,0 +1,4 @@
+
+
+class FacebookAuthenticateBackend(object):
+    pass
