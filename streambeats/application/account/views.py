@@ -1,23 +1,14 @@
-from .forms import LoginForm
 from django.shortcuts import render
 from django.views.generic.edit import FormView
 
+from rest_framework.viewset import ViewSet
 
-class LoginView(FormView):
+from .models import User
 
-    form_class = LoginForm
 
-    template_name = 'account/login.html'
-
-    def get_form_kwargs(self):
-        form_kwargs = super(LoginView, self).get_form_kwargs()
-        form_kwargs.update({
-            'request': self.request    
-        })
-        return form_kwargs
-
-    def forms_valid(self, form):
-        pass
-
-    def forms_invalid(self, form):
-        pass
+class UserViewSet(ViewSet):
+    """
+    ViewSet from user
+    """
+    model_class = User
+    #serializer_class = UserSerializer

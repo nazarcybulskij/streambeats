@@ -1,0 +1,5 @@
+Django==1.6.1
+South==0.8.4
+markdown==2.4
+django-filter==0.7
+djangorestframewor==2.3.12

@@ -18,7 +18,6 @@ class LoginForm(forms.Form):
         super(LoginForm, self).__init__(*args, **kwargs)
 
     def clean(self):
-        
         """
             Login user on clean action
         """
@@ -26,10 +25,7 @@ class LoginForm(forms.Form):
         username = self.cleaned_data.get('username')
         password = self.cleaned_data.get('password')
 
-        user = auth.authenticate(
-            username = username,
-            password = password
-        )
+        user = auth.authenticate(username=username, password=password)
 
         if user:
             auth.login(self.request, user)
