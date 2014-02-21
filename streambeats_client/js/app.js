@@ -1,10 +1,11 @@
 define([
     'jquery',
     'underscore',
-    'backbone'
-], function($, _, Backbone) {
+    'backbone',
+    'router'
+], function($, _, Backbone, Router) {
     var initialize = function() {
-        console.log('App run ...');
+        Router.initialize();
     };
 
     return {
