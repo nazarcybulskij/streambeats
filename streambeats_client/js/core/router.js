@@ -4,21 +4,26 @@ define([
     'backbone'
 ], function ($, _, Backbone) {
    var AppRouter = Backbone.Router.extend({
+        
+        initialize: function () {
+            console.log('router initialize...');
+        },
+        
         routes: {
             '': 'index',
-            'tracks': 'tracks'
+            'tracks/:id': 'tracks'
         },
 
         index: function (){
-            console.log('index');
+            $('.content').html("index");
         }
    });
 
    var initialize = function (){
         var router = new AppRouter;
 
-        router.on('route:tracks', function () {
-            console.log('tracks'); 
+        router.on('route:tracks', function(id) {
+            $('.content').html("track id: " + id); 
         });
 
         Backbone.history.start();

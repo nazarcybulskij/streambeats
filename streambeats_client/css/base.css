@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-    min-height: 100%;
+    height: 500px;
 }
 
 header, footer, section, aside {
