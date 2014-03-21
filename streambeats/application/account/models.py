@@ -4,8 +4,9 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class User(AbstractUser):
-    
-    #email = models.EmailField(max_length=80, verbose_name=_('email'))
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email']
 
     def __unicode__(self):
         return self.username
